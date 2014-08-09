@@ -6,7 +6,7 @@
 <body>
 
 <p class="body">
-$IntroText
+$EmailIntroText
 </p>
 <p class="body">
 <% loop Fields %>
@@ -22,6 +22,6 @@ $IntroText
 	<% end_if %>
 <% end_loop %>
 </p>
-<small>This email was received from <a href="$Domain">$Domain</a></small>
+<small>Sivustolta: <a href="$Domain">$Domain</a></small>
 </body>
 </html>
