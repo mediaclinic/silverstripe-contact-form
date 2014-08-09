@@ -8,7 +8,7 @@
  * @author Aaron Carlino <aaron@bluehousegroup.com>
  * @package ContactForm
  */
-class ContactFormPage extends Page {
+class ContactFormPage extends WideHeaderSection {
 
 	static $singular_name = 'ContactForm Page';
 	static $plural_name = 'ContactForm Pages';
@@ -19,16 +19,16 @@ class ContactFormPage extends Page {
 	private static $db = array (
 		'To' => 'Varchar(255)',
 		'Subject' => 'Varchar(255)',
-		'IntroText' => 'Text',    
+		'EmailIntroText' => 'Text',    
 		'SuccessMessage' => 'HTMLText'
 	);
 	
 	
 	private static $defaults = array (
 		'To' => 'you@example.com',
-		'Subject' => 'New contact form',
-		'IntroText' => 'A user has submitted a new contact form from your website. His/her information appears below.',
-		'SuccessMessage' => 'Thank you for submitting the contact form!'
+		'Subject' => 'Yhteydenotto',
+		'EmailIntroText' => 'Yhteydenotto www-sivuilta. Ohessa viestin sisältö.',
+		'SuccessMessage' => 'Kiitos lähetyksestä!'
 	);
 	
 	
@@ -39,7 +39,7 @@ class ContactFormPage extends Page {
 		$f->addFieldsToTab("Root.ContactForm", array(
 		new TextField('To', _t('ContactForm.TO','Send form to (comma separated email addresses)')),
 		new TextField('Subject', _t('ContactForm.SUBJECT', 'Subject of email')),
-		new TextareaField('IntroText', _t('ContactForm.INTROTEXT','Email intro text')),
+		new TextareaField('EmailIntroText', _t('ContactForm.INTROTEXT','Email intro text')),
 		new HtmlEditorField('SuccessMessage', _t('ContactForm.SUCCESSMESSAGE','Success message'))
 		));
 		
@@ -52,7 +52,7 @@ class ContactFormPage extends Page {
 
 
 
-class ContactFormPage_Controller extends Page_Controller {
+class ContactFormPage_Controller extends WideHeaderSection_Controller {
   
 
 	private static $allowed_actions = array (
@@ -70,7 +70,7 @@ class ContactFormPage_Controller extends Page_Controller {
 	public function Form() {
 		return ContactForm::create("Form", $this->To, $this->Subject)
 			->setSuccessMessage($this->SuccessMessage)
-			->setIntroText($this->IntroText);
+			->setEmailIntroText($this->EmailIntroText);
 	}
 
 
