@@ -170,7 +170,7 @@ class ContactForm extends Object {
 	/**
 	 * @var string The intro text to put in the email before the form data
 	 */
-	protected $emailIntroText = "";
+	protected $emailEmailIntroText = "";
 
 
 
@@ -776,7 +776,7 @@ class ContactForm extends Object {
 	 * @param string
 	 * @return ContactForm
 	 */
-	public function setIntroText($text) {
+	public function setEmailIntroText($text) {
 		$this->emailIntroText = $text;
 		return $this;
 	}
@@ -789,7 +789,7 @@ class ContactForm extends Object {
 	 *
 	 * @return string
 	 */
-	public function getIntroText() {
+	public function getEmailIntroText() {
 		return $this->emailIntroText;
 	}
 

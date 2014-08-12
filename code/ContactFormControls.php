@@ -109,7 +109,7 @@ class ContactFormControls extends DataExtension {
 		}
 
 		$messageData = array(
-			'IntroText' => $proxy->getIntroText(),
+			'EmailIntroText' => $proxy->getEmailIntroText(),
 			'Fields' => $fields,
 			'Domain' => Director::protocolAndHost()
 		);
