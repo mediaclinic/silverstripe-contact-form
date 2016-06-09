@@ -8,7 +8,7 @@
  * @author Aaron Carlino <aaron@bluehousegroup.com>
  * @package ContactForm
  */
-class ContactFormPage extends WideHeaderSection {
+class ContactFormPage extends HeaderSection {
 
 	static $singular_name = 'ContactForm Page';
 	static $plural_name = 'ContactForm Pages';
@@ -52,7 +52,7 @@ class ContactFormPage extends WideHeaderSection {
 
 
 
-class ContactFormPage_Controller extends WideHeaderSection_Controller {
+class ContactFormPage_Controller extends HeaderSection_Controller {
   
 
 	private static $allowed_actions = array (
