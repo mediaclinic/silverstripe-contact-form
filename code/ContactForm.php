@@ -277,7 +277,6 @@ class ContactForm extends Object {
 			FieldList::create(),
 			FieldList::create(
 				FormAction::create("doContactFormSubmit", _t('ContactForm.SEND','Send'))
-				->setStyle('default')
 			),
 			RequiredFields::create()
 		);
@@ -795,7 +794,7 @@ class ContactForm extends Object {
 	 * @return ContactForm
 	 */
 	public function setEmailIntroText($text) {
-		$this->emailIntroText = $text;
+		$this->emailEmailIntroText = $text;
 		return $this;
 	}
 
@@ -808,7 +807,7 @@ class ContactForm extends Object {
 	 * @return string
 	 */
 	public function getEmailIntroText() {
-		return $this->emailIntroText;
+		return $this->emailEmailIntroText;
 	}
 
 

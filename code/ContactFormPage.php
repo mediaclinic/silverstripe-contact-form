@@ -1,7 +1,5 @@
 <?php
 
-
-
 /**
  * A page type that allows CMS configuration of a contact form
  * 
@@ -14,7 +12,6 @@ class ContactFormPage extends HeaderSection {
 	static $plural_name = 'ContactForm Pages';
 	static $description = 'ContactForm Page is a simple contact page extension with form.';
 	static $icon = '';
-  
 
 	private static $db = array (
 		'To' => 'Varchar(255)',
@@ -27,7 +24,7 @@ class ContactFormPage extends HeaderSection {
 	private static $defaults = array (
 		'To' => 'you@example.com',
 		'Subject' => 'Yhteydenotto',
-		'EmailIntroText' => 'Yhteydenotto www-sivuilta. Ohessa viestin sisältö.',
+		'EmailIntroText' => 'Yhteydenotto www-sivuilta. Ohessa viestin sisältö:',
 		'SuccessMessage' => 'Kiitos lähetyksestä!'
 	);
 	
@@ -46,14 +43,12 @@ class ContactFormPage extends HeaderSection {
 		return $f;
 	}
 
-  
 }
 
 
 
 
 class ContactFormPage_Controller extends HeaderSection_Controller {
-  
 
 	private static $allowed_actions = array (
 		'Form'
