@@ -63,7 +63,7 @@ class ContactFormPage_Controller extends HeaderSection_Controller {
 	 * @return ContactForm
 	 */
 	public function Form() {
-		return ContactForm::create("Form", $this->To, $this->Subject)
+		return ContactForm::create($this, "Form", $this->To, $this->Subject)
 			->setSuccessMessage($this->SuccessMessage)
 			->setEmailIntroText($this->EmailIntroText);
 	}
